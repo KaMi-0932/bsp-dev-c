@@ -1,0 +1,11 @@
+modules:
+- id: QDU-Robomaster/Chassis
+  repo: https://github.com/KaMi-0932/Chassis.git
+- id: QDU-Robomaster/Motor
+  repo: https://github.com/KaMi-0932/Motor-projected-torque.git
+- id: QDU-Robomaster/RMMotor
+  repo: https://github.com/KaMi-0932/RMMotor.git
+- id: QDU-Robomaster/PowerControl
+  repo: https://github.com/KaMi-0932/PowerControl.git
+- id: xrobot-org/SharedTopicClient
+  repo: https://github.com/KaMi-0932/SharedTopicClient.git

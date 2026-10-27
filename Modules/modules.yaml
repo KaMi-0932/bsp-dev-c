@@ -2,7 +2,7 @@ xrobot: 1.0.1
 modules:
 - QDU-Robomaster/CMD@same-or-dev
 - QDU-Robomaster/CameraSync@same-or-dev
-- QDU-Robomaster/Chassis@same-or-dev
+- QDU-Robomaster/Chassis@投影力矩
 - QDU-Robomaster/DMMotor@same-or-dev
 - QDU-Robomaster/DR16@same-or-dev
 - QDU-Robomaster/Dart@same-or-dev
@@ -12,9 +12,9 @@ modules:
 - QDU-Robomaster/HostData@same-or-dev
 - QDU-Robomaster/InfantryLauncher@same-or-dev
 - QDU-Robomaster/MiniGimbal@same-or-dev
-- QDU-Robomaster/Motor@same-or-dev
-- QDU-Robomaster/PowerControl@same-or-dev
-- QDU-Robomaster/RMMotor@same-or-dev
+- QDU-Robomaster/Motor@投影力矩
+- QDU-Robomaster/PowerControl@投影力矩
+- QDU-Robomaster/RMMotor@投影力矩
 - QDU-Robomaster/Referee@same-or-dev
 - QDU-Robomaster/SentryProtocol@same-or-dev
 - QDU-Robomaster/SuperPower@same-or-dev
@@ -24,4 +24,4 @@ modules:
 - xrobot-org/BuzzerAlarm@same-or-dev
 - xrobot-org/MadgwickAHRS@same-or-dev
 - xrobot-org/SharedTopic@same-or-dev
-- xrobot-org/SharedTopicClient@same-or-dev
+- xrobot-org/SharedTopicClient@投影力矩

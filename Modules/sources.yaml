@@ -3,3 +3,5 @@ sources:
   priority: 0
 - url: https://qdu-robomaster.github.io/qdu-future-modules/index.yaml
   priority: 0
+- url: projected-torque-index.yaml
+  priority: -100
