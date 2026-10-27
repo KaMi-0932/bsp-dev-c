@@ -246,6 +246,7 @@ modules:
             rotor_buffer_low_j: 35.0
             rotor_buffer_high_j: 70.0
             rotor_scale_lpf_alpha: 0.2
+            moment_of_inertia: 0.0f
           pid_follow: '{.p = 1.0, .cycle = true}'
           pid_velocity_x: '{.k = 0.0015, .p = 14.0}'
           pid_velocity_y: '{.k = 0.0015, .p = 14.0}'
