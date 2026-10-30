@@ -28,7 +28,7 @@ requests:
 - id: QDU-Robomaster/Motor
   ref: 投影力矩
 - id: QDU-Robomaster/PowerControl
-  ref: 投影力矩
+  ref: same-or-dev
 - id: QDU-Robomaster/Referee
   ref: same-or-dev
 - id: QDU-Robomaster/RMMotor
@@ -72,7 +72,7 @@ modules:
     requested: 投影力矩
     resolved_ref: 投影力矩
     ref_kind: branch
-    commit: b8aa3f52e30e0fca4fe8ad77d84f7e3a5c2753b9
+    commit: 5462dc9b56f7620a6662218c54015fa5311fa7f6
   QDU-Robomaster/DMMotor:
     repo: https://github.com/QDU-Robomaster/DMMotor.git
     source: https://qdu-robomaster.github.io/qdu-future-modules/index.yaml
@@ -142,21 +142,21 @@ modules:
     requested: same-or-dev
     resolved_ref: 投影力矩
     ref_kind: branch
-    commit: c6a55e413f196bdeb22f29c2d9c03acc4ab0891d
+    commit: 145b83e9b0c6c55219ebc98d69730b545eedc3db
   QDU-Robomaster/PowerControl:
-    repo: https://github.com/KaMi-0932/PowerControl.git
-    source: Modules/projected-torque-index.yaml
+    repo: https://github.com/QDU-Robomaster/PowerControl.git
+    source: https://qdu-robomaster.github.io/qdu-future-modules/index.yaml
     requested: same-or-dev
-    resolved_ref: 投影力矩
+    resolved_ref: dev
     ref_kind: branch
-    commit: b198c8c87da43e51d42278894b31b4455e240b73
+    commit: 4097e1f6a3fad89126e82b920217961286966d84
   QDU-Robomaster/RMMotor:
     repo: https://github.com/KaMi-0932/RMMotor.git
     source: Modules/projected-torque-index.yaml
     requested: same-or-dev
     resolved_ref: 投影力矩
     ref_kind: branch
-    commit: dff7487e83902456441e438d13954d84050da87b
+    commit: a59f33ab421fa6d68734b654199e37a0a41261af
   QDU-Robomaster/Referee:
     repo: https://github.com/QDU-Robomaster/Referee.git
     source: https://qdu-robomaster.github.io/qdu-future-modules/index.yaml

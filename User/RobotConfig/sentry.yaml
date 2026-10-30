@@ -103,7 +103,7 @@ modules:
       - is_helm: true
       - chassis_static_power_loss: 5.5
       - motor_count_3508: 4
-      - motor_count_6020: 4
+      - motor_count_6020: 0
   - module: QDU-Robomaster/DMMotor
     id: motor_yaw
     args:

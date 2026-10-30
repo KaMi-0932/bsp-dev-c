@@ -13,7 +13,7 @@ modules:
 - QDU-Robomaster/InfantryLauncher@same-or-dev
 - QDU-Robomaster/MiniGimbal@same-or-dev
 - QDU-Robomaster/Motor@投影力矩
-- QDU-Robomaster/PowerControl@投影力矩
+- QDU-Robomaster/PowerControl@same-or-dev
 - QDU-Robomaster/RMMotor@投影力矩
 - QDU-Robomaster/Referee@same-or-dev
 - QDU-Robomaster/SentryProtocol@same-or-dev
