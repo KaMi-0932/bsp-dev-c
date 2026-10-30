@@ -19,7 +19,7 @@ modules:
           accl_freq: BMI088::AcclFreq::ACCL_800HZ
           gyro_range: BMI088::GyroRange::DEG_2000DPS
           accl_range: BMI088::AcclRange::ACCL_24G
-          rotation: '{0.707, 0.707, 0.0, 0.0}'
+          rotation: '{1.0, 0.0, 0.0, 0.0}'
           pid_param: '{.k = 1.0, .p = 0.35, .i = 0.0, .d = 0.0, .i_limit = 0.0, .out_limit = 0.0, .cycle = false}'
           gyro_topic_name: "gimbal_gyro"
           accl_topic_name: "gimbal_accl"
@@ -102,9 +102,9 @@ modules:
       - referee: '&ref'
       - param:
           task_stack_depth: 1536
-          pid_yaw_angle: '{.k = 1.0, .p = 20.0, .i = 0.0, .d = 0.0, .i_limit = 0.015, .out_limit = 0.0, .cycle = true}'
-          pid_yaw_omega: '{.k = 1.0, .p = 2.0, .i = 0.0, .d = 0.0, .i_limit = 0.0, .out_limit = 0.0, .cycle = false}'
-          pid_pit_angle: '{.k = 1, .p = 30.0, .i = 0.0, .d = 0.03, .i_limit = 0.0, .out_limit = 0, .cycle = true}'
+          pid_yaw_angle: '{.k = 1.0, .p = 5, .i = 0.0, .d = 0.0, .i_limit = 0.015, .out_limit = 0.0, .cycle = true}'
+          pid_yaw_omega: '{.k = 1.0, .p = 1, .i = 0.0, .d = 0.0, .i_limit = 0.0, .out_limit = 0.0, .cycle = false}'
+          pid_pit_angle: '{.k = 1, .p = 0.3, .i = 0.0, .d = 0.00, .i_limit = 0.0, .out_limit = 0, .cycle = true}'
           pid_pit_omega: '{.k = 1.0, .p = 0.47, .i = 0.0, .d = 0.0, .i_limit = 0.0, .out_limit = 0, .cycle = false}'
           pit_max_angle: 1.8
           pit_min_angle: 0.5
@@ -291,7 +291,7 @@ modules:
     id: event_binder
     args:
       - modules: '{{"dr16", dr16}, {"chassis", helm_chassis}, {"gimbal", gimbal}}'
-      - event_binding_groups: '{{{{"dr16", DR16::SwitchPos::DR16_SW_R_POS_TOP, "gimbal", GimbalEvent::SET_MODE_RELAX}, {"dr16", DR16::SwitchPos::DR16_SW_R_POS_MID, "gimbal", GimbalEvent::SET_MODE_COMMON}, {"dr16", DR16::SwitchPos::DR16_SW_R_POS_BOT, "gimbal", GimbalEvent::SET_MODE_COMMON}, {"dr16", DR16::SwitchPos::DR16_SW_L_POS_TOP, "chassis", Helm::ChassisMode::RELAX}, {"dr16", DR16::SwitchPos::DR16_SW_L_POS_MID, "chassis", Helm::ChassisMode::FOLLOW}, {"dr16", DR16::SwitchPos::DR16_SW_L_POS_BOT, "chassis", Helm::ChassisMode::INDEPENDENT}}}}'
+      - event_binding_groups: '{{{{"dr16", DR16::SwitchPos::DR16_SW_R_POS_TOP, "gimbal", GimbalEvent::SET_MODE_RELAX}, {"dr16", DR16::SwitchPos::DR16_SW_R_POS_MID, "gimbal", GimbalEvent::SET_MODE_COMMON}, {"dr16", DR16::SwitchPos::DR16_SW_R_POS_BOT, "gimbal", GimbalEvent::SET_MODE_COMMON}, {"dr16", DR16::SwitchPos::DR16_SW_L_POS_TOP, "chassis", Helm::ChassisMode::RELAX}, {"dr16", DR16::SwitchPos::DR16_SW_L_POS_MID, "chassis", Helm::ChassisMode::FOLLOW}, {"dr16", DR16::SwitchPos::DR16_SW_L_POS_BOT, "chassis", Helm::ChassisMode::ROTOR}}}}'
   - module: QDU-Robomaster/HostData
     id: hostdata
     args:
