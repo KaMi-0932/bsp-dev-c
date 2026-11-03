@@ -72,7 +72,7 @@ modules:
     requested: 投影力矩
     resolved_ref: 投影力矩
     ref_kind: branch
-    commit: afd44c1d44f4d3c0767c230e179ed90b8dce1127
+    commit: 2d1a0cd1f36975d98531298d6ac18dc95b831970
   QDU-Robomaster/DMMotor:
     repo: https://github.com/QDU-Robomaster/DMMotor.git
     source: https://qdu-robomaster.github.io/qdu-future-modules/index.yaml

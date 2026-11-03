@@ -202,7 +202,7 @@ modules:
       - cmd: cmd
       - power_control: power_control
       - referee: ref
-      - task_stack_depth: 2048
+      - task_stack_depth: 4096
       - param:
           chassis_param:
             wheel_radius: 0.06
