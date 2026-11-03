@@ -2,8 +2,11 @@
 
 默认产品为 `User/xrobot.yaml`，配置来自 luyan2 的完整机器人配置。
 舵轮控制包括正逆运动学、静止锁角、cos³ 补偿、底盘速度闭环和力矩前馈。
-功率控制使用 QDU 上游 PowerControl，Helm 沿用上游的辨识、功率上限与限流接口，
-保留仅限制四个驱动轮的策略。舵向电机不计入功率预算，保留 PID 输出及自身扭矩限幅。
+Helm 使用文档中的多边形裁剪、功率椭圆切点及边界交点方法求解加速度约束。
+只约束四个驱动轮，电机功率带符号求和，制动负功率不截 0；舵向电机不计入预算。
+PowerControl 保留原有在线辨识，增加只读模型快照接口供求解器使用。
+打滑模型使用 μ=0.35；普通模式归一化权重为平动:旋转=1:1，ROTOR 为 1:4。
+裁判离线使用 HELM_CHASSIS_MAX_POWER，超电沿用在线 BOOST 的 40/70/100 W 分档。
 额外功率估算及 Ozone 采样变量已删除。
 随动模式使用 2° 角度死区；独立和旋转模式的角速度由摇杆 z 指令控制。
 
@@ -24,10 +27,10 @@ cmake --build --preset debug
 
 ## 模块版本
 
-`Modules/projected-torque-index.yaml` 将四个模块的逻辑 ID 映射到 KaMi-0932
+`Modules/projected-torque-index.yaml` 将五个模块的逻辑 ID 映射到 KaMi-0932
 账户下的 Fork，`Modules/sources.yaml` 为这份项目内索引设置更高优先级。
-`Modules/modules.yaml` 指定它们的“投影力矩”分支；PowerControl 直接使用 QDU
-上游仓库。`xrobot.lock` 记录精确提交。
+`Modules/modules.yaml` 指定它们的“投影力矩”分支；PowerControl 的 Fork 保留 QDU
+上游辨识与限流实现，并增加约束求解所需的只读模型接口。`xrobot.lock` 记录精确提交。
 新克隆无需手动覆盖模块文件。
 
 Motor 的 Fork 名为 `Motor-projected-torque`，保留账户中原有的 `Motor` 仓库。
@@ -43,4 +46,5 @@ Motor 的 Fork 名为 `Motor-projected-torque`，保留账户中原有的 `Motor
 
 ## 摩擦系数测量
 
-当前轮地摩擦系数实测约为 0.4，仅作记录，尚未接入抓地或加速度约束。
+当前轮地摩擦系数实测约为 0.4，控制约束按用户选择保守使用 0.35。抓地模型假定四轮等载。
+实车仍需验证模型误差、制动回馈能力及最坏求解耗时是否满足 2 ms 周期。
